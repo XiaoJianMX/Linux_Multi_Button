@@ -1,0 +1,26 @@
+
+/* 
+    设备树节点示例
+    1.其中pinctrl-0 如有多个，需要用pinctrl-n
+    2.其中button0 如有多个，可以用button-n
+    3.其中button-gpios 中的GPIO_ACTIVE_LOW 表示低电平有效，GPIO_ACTIVE_HIGH 表示高电平有效
+    4.其中button-gpios 中的18 表示GPIO1_18
+    5.其中interrupts 中的18 表示GPIO1_18
+    6.如果使用platform设备驱动模型，需要在设备树中添加compatible = ""属性;
+*/
+
+buttons{
+        compatible = "xiaojian,button";
+        #address-cells = <1>;
+        #size-cells = <0>;
+        pinctrl-name = "default";
+        status = "okay";
+        pinctrl-0 = <&pinctrl_button0>;
+        button0{
+            label = "user button0";
+            button-gpios = <&gpio1 18 GPIO_ACTIVE_LOW>;
+            interrupt-parent = <&gpio1>;
+            interrupts = <18 IRQ_TYPE_EDGE_FALLING>;
+        };
+
+    };
