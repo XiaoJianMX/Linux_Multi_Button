@@ -69,8 +69,7 @@ int main(int argc, char *argv[])
         default:
             break;
         }
-        
-    }
     close(fd);
     return 0;
+    }
 }
