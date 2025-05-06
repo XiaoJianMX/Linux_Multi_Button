@@ -22,7 +22,7 @@ multi_button 是一个基于 Linux 内核的多按键驱动示例，支持单击
 如需进一步完善文档内容，请补充具体使用说明、硬件连接图等信息。
 
 应用程序读取按键示例:
-
+```
 #include <stdio.h>
 #include <stdlib.h>
 #include <fcntl.h>
@@ -69,7 +69,8 @@ int main(int argc, char *argv[])
         default:
             break;
         }
+    }
     close(fd);
     return 0;
-    }
 }
+```
